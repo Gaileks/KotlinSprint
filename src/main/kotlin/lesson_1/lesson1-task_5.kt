@@ -1,7 +1,8 @@
 package lesson_1
+
 fun main() {
     val timeSeconds = 6490
-    val timeMinutes = timeSeconds/60
+    val timeMinutes = timeSeconds / 60
     val seconds = timeSeconds % 60
- println("Время, проведенное в космосе $timeMinutes:$seconds")
+    println("Время, проведенное в космосе $timeMinutes:$seconds")
 }
