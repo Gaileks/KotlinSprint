@@ -7,5 +7,5 @@ fun main() {
     val partOfDay: Float = 0.075F
     val seconds: Short = 6480
     val partOfYear: Double = 2.0547945205479453E-4
-    val apogee: Float = 327000F
+    val apogee: Int = 327000
 }
