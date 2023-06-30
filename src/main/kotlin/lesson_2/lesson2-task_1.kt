@@ -6,7 +6,7 @@ fun main() {
     val scoresThree = 3
     val scoresFour = 5
     val averageScore: Double = (scoresOne + scoresTwo + scoresThree + scoresFour) / 4.0
-    val roundoff = String.format( "%.2f", averageScore)
+    val roundoff = String.format("%.2f", averageScore)
 
      println(roundoff)
 }
