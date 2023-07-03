@@ -5,6 +5,7 @@ fun main() {
     val crew: Int
     val provisions: Int
     val goodWeather: Boolean
+    val readyToSail: Boolean
 
     println("Есть ли повреждения корпуса(true/false): ")
     hullDamage = readln() == "true"
@@ -15,7 +16,7 @@ fun main() {
     println("Благоприятные ли метеоусловия(true/false):")
     goodWeather = readln() == "true"
 
-    val readyToSail =
+     readyToSail =
         (hullDamage && crew > 55 && crew < 70 && provisions > 50) || (crew > 55 && crew == 70 && goodWeather)
 
     println("Может ли корабль отправляться? $readyToSail ")
