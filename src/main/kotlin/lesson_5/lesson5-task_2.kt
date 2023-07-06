@@ -2,6 +2,7 @@ package lesson_5
 
 import java.time.LocalDate
 import java.time.Period
+ const val AGE = 18
 
 fun main() {
     print("Введите свою дату рождения \nДень: ")
@@ -13,8 +14,8 @@ fun main() {
     val dateUser = LocalDate.of(year, month, day)
     val date = LocalDate.now()
     val period = Period.between(dateUser, date)
-    val age = 18
 
-    if (period.years >= age) println("Показать экран со скрытым контентом")
+
+    if (period.years >= AGE) println("Показать экран со скрытым контентом")
     else println("Доступ запрещен")
 }
