@@ -128,7 +128,7 @@ class text_style {
     fun Char.bgCyan() = "\u001b[46m${this}\u001b[0m"
     fun Char.bgGreen() = "\u001b[42m${this}\u001b[0m"
     fun Char.bgMagenta() = "\u001b[45m${this}\u001b[0m"
-    fun Char.bgRed() = "\u001b[41m${this}\u001b[0m"
+    fun Char.bgRed() =  "\u001b[41m${this}\u001b[0m"
     fun Char.bgWhite() = "\u001b[47m${this}\u001b[0m"
     fun Char.bgYellow() = "\u001b[43m${this}\u001b[0m"
     fun Char.bgBrightBlack() = "\u001b[40;1m${this}\u001b[0m"
