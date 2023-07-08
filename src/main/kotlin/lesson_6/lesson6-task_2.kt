@@ -1,9 +1,11 @@
 package lesson_6
+
 fun main() {
     val num = readln().toInt()
     var counter = 0
-    while (counter != num ){
+    while (counter != num) {
         Thread.sleep(1000)
-        println("Прошло ${++counter} секунд")
+        ++counter
     }
+    println("Прошло $counter секунд")
 }
