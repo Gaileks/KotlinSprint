@@ -6,8 +6,8 @@ fun main() {
         val numOne = (1..9).random()
         val numTwo = (1..9).random()
         println("Напишите правильный ответ $numOne + $numTwo = ")
-        val otvet = numOne + numTwo
-        if (readln().toInt() == otvet) {
+        val answer = numOne + numTwo
+        if (readln().toInt() == answer) {
             println("Добро пожаловать!")
             count = 0
         } else {
