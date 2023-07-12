@@ -8,5 +8,5 @@ fun main() {
     }
 
     println("Просмотры по дням: ${viewsWeek.joinToString(", ")}")
-    println("\nПросмотров за неделю:  ${viewsWeek.sum()}")
+    println("Просмотры за неделю:  ${viewsWeek.sum()}")
 }
