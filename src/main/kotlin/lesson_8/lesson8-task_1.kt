@@ -7,11 +7,6 @@ fun main() {
         viewsWeek[i] = (0..5).random()
     }
 
-    println("Просмотры по дням:")
-
-    viewsWeek.forEach {
-        print("$it, ")
-    }
-
+    println("Просмотры по дням: ${viewsWeek.joinToString(", ")}")
     println("\nПросмотров за неделю:  ${viewsWeek.sum()}")
 }
