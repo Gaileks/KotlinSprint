@@ -1,22 +1,19 @@
 package lesson_8
 
 fun main() {
-    val recipe = arrayOf("Молоко", "Яйца", "Мука", "Сахар", "Соль")
+    val recipeIngredients = arrayOf("молоко", "яйца", "мука", "сахар", "соль")
 
-    println("Список ингредиентов : ${recipe.joinToString(", ")}")
+    println("Список ингредиентов : ${recipeIngredients.joinToString(", ")}")
     println("Какой ингредиент  надо заменить:")
 
-    val ingredient = readln()
+    val ingredient = readln().lowercase()
 
-    if (ingredient !in recipe) println("Такого ингредиента нет")
-    else {
+    if (ingredient !in recipeIngredients) {
+        println("Такого ингредиента нет")
+    } else {
         println("На какой ингредиент заменить:")
-
-        for (i in recipe.indices) {
-            if (recipe[i] == ingredient) {
-                recipe[i] = readln()
-                println("Новый список ингредиентов: ${recipe.joinToString(", ")}")
-            }
-        }
+        recipeIngredients[recipeIngredients.indexOf(ingredient)] = readln()
+        println("Новый список ингредиентов: ${recipeIngredients.joinToString(", ")}")
     }
 }
+
