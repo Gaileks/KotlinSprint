@@ -6,7 +6,7 @@ fun main() {
     println("В рецепте есть базовые ингредиенты: ${recipeIngredients.joinToString(", ")}")
     println("Желаете добавить еще?")
 
-    if (readln() == "да") {
+    if (readln().lowercase() == "да") {
         println("Какой ингредиент вы хотите добавить?")
         recipeIngredients.add(readln())
         println("Теперь в рецепте есть следующие ингредиенты: ${recipeIngredients.joinToString(", ")}")
