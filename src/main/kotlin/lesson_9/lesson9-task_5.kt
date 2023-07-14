@@ -1,5 +1,7 @@
 package lesson_9
 
+import java.util.*
+
 fun main() {
     println("В рецепт надо добавить пять ингредиентов")
 
@@ -10,9 +12,12 @@ fun main() {
         recipeIngredients.add(readln())
     }
 
-    recipeIngredients = recipeIngredients.distinct().toMutableList()
+    recipeIngredients = recipeIngredients.toSet().toMutableList()
     recipeIngredients.sort()
-    recipeIngredients[0] = recipeIngredients[0].capitalize()
+    recipeIngredients[0] = recipeIngredients[0].capitalizeNew()
 
     println("${recipeIngredients.joinToString(", ")}.")
 }
+
+fun String.capitalizeNew(): String =
+    replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
