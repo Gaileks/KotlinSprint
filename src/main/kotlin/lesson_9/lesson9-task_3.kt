@@ -1,7 +1,7 @@
 package lesson_9
 
 fun main() {
-    val recipeIngredients = mutableListOf(2, 50, 15)
+    val recipeIngredients = listOf(2, 50, 15)
 
     println("Введите количество порций:")
 
