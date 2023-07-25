@@ -5,18 +5,13 @@ import java.util.*
 fun main() {
     println("В рецепт надо добавить пять ингредиентов")
 
-    var recipeIngredients = mutableListOf<String>()
+    val recipeIngredients = mutableSetOf<String>()
 
     repeat(5) {
         println("Добавите ${it + 1} ингредиент: ")
         recipeIngredients.add(readln())
     }
-
-    recipeIngredients = recipeIngredients.toSet().toMutableList()
-    recipeIngredients.sort()
-    recipeIngredients[0] = recipeIngredients[0].capitalizeNew()
-
-    println("${recipeIngredients.joinToString(", ")}.")
+    println("${recipeIngredients.sorted().joinToString(", ").capitalizeNew()}.")
 }
 
 fun String.capitalizeNew(): String =
