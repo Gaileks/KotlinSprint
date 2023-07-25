@@ -2,10 +2,12 @@ package lesson_10
 
 fun main() {
     println("Введите длину пароля: ")
-    println("Пароль: ${ password(readln().toInt()) }")
+    println("Пароль: ${getPassword(readln().toInt())}")
 }
-fun password(num: Int): String {
-    val symbols = listOf('!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', '-', '.', '/', ' ', ',')
+
+fun getPassword(num: Int): String {
+
+    val symbols = (' '..'/')
     val numbers = (0..9)
     var str = ""
 
