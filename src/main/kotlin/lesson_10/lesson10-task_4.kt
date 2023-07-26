@@ -1,72 +1,44 @@
 package lesson_10
 
-import java.util.*
-
 fun main() {
 
     launchTheGame()
 }
 
-fun recordGameStatistics(statistics: MutableList<Int>, num: Int): MutableList<Int> {
-
-    when (num) {
-        1 -> statistics[0] += 1
-        2 -> statistics[1] += 1
-        3 -> statistics[2] += 1
-    }
-    return statistics
-}
-
 fun launchTheGame() {
-    var statistics = mutableListOf(0, 0, 0)
-    var count = 0
-    val person = getDiceRoll()
-    val computer = getDiceRoll()
-
     do {
+        val person = getDiceRoll()
+        val computer = getDiceRoll()
         println("Бросок Человека, выпало ${person.joinToString(", ")}")
         println("Бросок Компьютера, выпало ${computer.joinToString(", ")}")
-        statistics = recordGameStatistics(statistics, getWinner(person.sum(), computer.sum()))
-        count++
+        getWinner(person.sum(), computer.sum())
         println("Хотите бросить кости еще раз Введите Да или Нет ")
 
-    } while (readln().capitalizeNew() == "Да")
+    } while (readln().lowercase() == "да")
 
-    getGameStatistics(statistics, count)
+    GameStatistics.getInfo()
 }
 
-fun getGameStatistics(statistics: MutableList<Int>, count: Int) {
-
-    println(
-        """
-        Раундов игры проведено: $count
-        Человек победил       : ${statistics[0]}
-        Компьютер победил     : ${statistics[1]}
-        Равные результаты     : ${statistics[2]}
-    """.trimIndent()
-    )
-}
-
-fun getWinner(person: Int, computer: Int): Int {
-    return when {
+fun getWinner(person: Int, computer: Int) {
+    when {
         person > computer -> {
             println("Победило человечество")
-            1
+            GameStatistics.setManWonCount()
+            GameStatistics.setRoundCount()
         }
 
         person < computer -> {
             println("Победила машина")
-            2
+            GameStatistics.setComputerWonCount()
+            GameStatistics.setRoundCount()
         }
 
         else -> {
             println("Равные результаты")
-            3
+            GameStatistics.setDrawnGameCount()
+            GameStatistics.setRoundCount()
         }
     }
 }
-
-fun String.capitalizeNew(): String =
-    replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
 
 fun getDiceRoll(): List<Int> = listOf((1..6).random(), (1..6).random())
