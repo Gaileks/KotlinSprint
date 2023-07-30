@@ -10,12 +10,12 @@ fun main() {
     getWinner(person.sum(), computer.sum())
 }
 
-fun getWinner(person: Int, computer: Int) {
-    when {
-        person > computer -> println("Победило человечество")
-        person < computer -> println("Победила машина")
-        else -> println("Равные результаты")
-    }
-}
-
-fun getDiceRoll(): List<Int> = listOf((1..6).random(), (1..6).random())
+//fun getWinner(person: Int, computer: Int) {
+//    when {
+//        person > computer -> println("Победило человечество")
+//        person < computer -> println("Победила машина")
+//        else -> println("Равные результаты")
+//    }
+//}
+//
+//fun getDiceRoll(): List<Int> = listOf((1..6).random(), (1..6).random())
