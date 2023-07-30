@@ -1,6 +1,5 @@
 package lesson_12
 
-
 fun main() {
 
     val weatherOne = WeatherDay(15, 2, 700)
@@ -14,7 +13,6 @@ class WeatherDay(
     atmosphericPressure: Int,
     wasItRaining: Boolean = true
 ) {
-
     init {
         println(
             """
