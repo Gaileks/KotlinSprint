@@ -7,8 +7,8 @@ fun main() {
     val weatherThree = WeatherDay(30, 10, 730)
     val weatherByDay = listOf(weatherOne, weatherTwo, weatherThree)
 
-    weatherByDay.forEach(){
-       it.getWeatherByDay()
+    weatherByDay.forEach() {
+        it.getWeatherByDay()
     }
 }
 
@@ -20,22 +20,22 @@ class WeatherDay(
 ) {
 
     fun getWeatherByDay() {
-            println(
-                """
+        println(
+            """
                 Погода: 
                 Температура днем: $daytimeTemperature
                 Температура ночью: $nightTemperature  
                 Атмосферное давление: $atmosphericPressure
                 Осадки, дождь: ${
-                    if (wasItRaining) {
-                        "да"
-                    } else {
-                        "нет"
-                    }
+                if (wasItRaining) {
+                    "да"
+                } else {
+                    "нет"
                 }
+            }
                 _________________________
             """.trimIndent()
-            )
-        }
+        )
     }
+}
 
