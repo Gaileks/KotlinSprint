@@ -12,26 +12,20 @@ fun main() {
 }
 
 class Weather(
-    daytimeTemperature: Int,
-    nightTemperature: Int,
-    atmosphericPressure: Int,
-    wasItRaining: Boolean,
-
-    ) {
-    private var daytimeTemperature = 0
-    private var nightTemperature = 1
-    private var atmosphericPressure = 700
-    private var wasItRaining = true
-
+    private val daytimeTemperature: Int,
+    private val nightTemperature: Int,
+    private val atmosphericPressure: Int,
+    private val wasItRaining: Boolean,
+) {
     fun weatherInfo() {
         println(
             """    
-        daytimeTemperature       = $daytimeTemperature
-        nightTemperature         = $nightTemperature
-        atmosphericPressure      = $atmosphericPressure
-        wasItRaining             = $wasItRaining
-         _________________       
-""".trimIndent()
+        daytimeTemperature   = $daytimeTemperature
+        nightTemperature     = $nightTemperature
+        atmosphericPressure  = $atmosphericPressure
+        wasItRaining         = $wasItRaining
+        _________________________     
+             """.trimIndent()
         )
     }
 }
