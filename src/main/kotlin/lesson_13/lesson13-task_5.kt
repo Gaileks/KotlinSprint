@@ -8,7 +8,7 @@ fun main() {
 
 fun addUserCard(): List<UserCardThree> {
     val userCards = mutableListOf<UserCardThree>()
-    var str = "да"
+    var wordToCheck = "да"
     var name: String?
     var phoneNumber: Long?
     var company: String?
@@ -32,9 +32,9 @@ fun addUserCard(): List<UserCardThree> {
 
         userCards.add(UserCardThree(name, phoneNumber, company))
         println("Если хотите добавить новую запись, введите \"да\"")
-        str = readln().lowercase()
+        wordToCheck = readln().lowercase()
 
-    } while (str == "да")
+    } while (wordToCheck.equals("да",ignoreCase = true))
     return userCards
 }
 
