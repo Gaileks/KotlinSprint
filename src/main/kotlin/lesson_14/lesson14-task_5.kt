@@ -5,15 +5,19 @@ import kotlin.math.pow
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
+const val red = "красный"
+const val black = "черный"
+const val green = "зеленый"
+
 fun main() {
 
     val figures = listOf(
-        Circle("красный", 5.0),
-        Circle("черный", 10.0),
-        Triangle("красный", 4.0, 5.0, 3.0),
-        Triangle("зеленый", 6.0, 8.0, 1.0),
-        Rectangle("черный", 10.0, 3.0),
-        Rectangle("красный", 8.0, 8.0),
+        Circle(red, 5.0),
+        Circle(black, 10.0),
+        Triangle(red, 4.0, 5.0, 3.0),
+        Triangle(green, 6.0, 8.0, 1.0),
+        Rectangle(black, 10.0, 3.0),
+        Rectangle(red, 8.0, 8.0),
     )
 
     println("Сумма периметров красных фигур: ${getSumPerimetersRedFigures(figures)}")
@@ -23,10 +27,8 @@ fun main() {
 fun getSumPerimetersRedFigures(figures: List<Figure>): Double {
     var sumPerimeters = 0.0
 
-    figures.forEach() {
-        if (it.color.equals("красный", ignoreCase = true)) {
-            sumPerimeters += it.getPerimeter()
-        }
+    figures.filter { it.color == red }.forEach() {
+        sumPerimeters += it.getPerimeter()
     }
     return (sumPerimeters * 100).roundToInt() / 100.0
 }
@@ -34,10 +36,8 @@ fun getSumPerimetersRedFigures(figures: List<Figure>): Double {
 fun getSumAreasRedFigures(figures: List<Figure>): Double {
     var sumAreas = 0.0
 
-    figures.forEach() {
-        if (it.color.equals("красный", ignoreCase = true)) {
-            sumAreas += it.getArea()
-        }
+    figures.filter { it.color == red }.forEach() {
+        sumAreas += it.getArea()
     }
     return (sumAreas * 100).roundToInt() / 100.0
 }
