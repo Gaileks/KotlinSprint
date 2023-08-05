@@ -6,27 +6,20 @@ fun main() {
     CrucialCarp().move()
 }
 
-interface DuckMovement {
+interface Swimming {
 
     fun move() {
-        println("Утка идет")
+        println("Плавает")
     }
 }
 
-interface SeagullMovement {
+interface Flying {
 
     fun move() {
-        println("Чайка летит")
+        println("Летит")
     }
 }
 
-interface CrucialCarpMovement {
-
-    fun move() {
-        println("Карась плывет")
-    }
-}
-
-class Duck : DuckMovement
-class Seagull : SeagullMovement
-class CrucialCarp : CrucialCarpMovement
+class Duck : Swimming
+class Seagull : Flying
+class CrucialCarp : Swimming
