@@ -5,9 +5,7 @@ fun main() {
     val temperature = Temperature(25.0)
     val precipitationAmount = PrecipitationAmount(0.5)
 
-    temperature.connectToTheServer()
     temperature.sendMessage()
-    precipitationAmount.connectToTheServer()
     precipitationAmount.sendMessage()
 }
 
@@ -23,6 +21,7 @@ abstract class WeatherStationMain(message: Double) {
 class Temperature(private var message: Double) : WeatherStationMain(message) {
 
     override fun sendMessage() {
+        super.connectToTheServer()
         println("Температура: $message \nСобщение:Отправлено")
     }
 }
@@ -30,6 +29,7 @@ class Temperature(private var message: Double) : WeatherStationMain(message) {
 class PrecipitationAmount(private var message: Double) : WeatherStationMain(message) {
 
     override fun sendMessage() {
+        super.connectToTheServer()
         println("Осадки составили:$message \nСобщение:Отправлено")
     }
 }
