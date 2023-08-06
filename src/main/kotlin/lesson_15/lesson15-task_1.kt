@@ -1,25 +1,35 @@
 package lesson_15
 
 fun main() {
-    Duck().move()
-    Seagull().move()
-    CrucialCarp().move()
+    Duck().swim()
+    Duck().walk()
+    Duck().fly()
+    Seagull().fly()
+    Seagull().walk()
+    CrucialCarp().swim()
 }
 
 interface Swimming {
 
-    fun move() {
+    fun swim() {
         println("Плавает")
+    }
+}
+
+interface Walking {
+
+    fun walk() {
+        println("Идет")
     }
 }
 
 interface Flying {
 
-    fun move() {
+    fun fly() {
         println("Летит")
     }
 }
 
-class Duck : Swimming
-class Seagull : Flying
+class Duck : Swimming, Walking, Flying
+class Seagull : Flying, Walking
 class CrucialCarp : Swimming
