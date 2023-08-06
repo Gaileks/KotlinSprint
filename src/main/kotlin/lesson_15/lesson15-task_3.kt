@@ -14,8 +14,6 @@ fun main() {
         it.search()
         println("найдено: ${it.numberUnitsStock}")
     }
-
-
 }
 
 interface Search {
