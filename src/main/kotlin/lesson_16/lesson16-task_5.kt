@@ -11,7 +11,6 @@ fun main() {
     gamer.statusGamerInfo()
     gamer.causeDamage(110)
     gamer.statusGamerInfo()
-
 }
 
 class Gamer(
@@ -46,7 +45,6 @@ class Gamer(
     }
 
     fun statusGamerInfo() {
-
         println(
             """           
            Имя:        $name  
