@@ -18,7 +18,7 @@ fun main() {
 class Forum() {
 
     private var listMessage: MutableList<String> = mutableListOf()
-    private var listUser: MutableList<User> = mutableListOf()
+    private var listUser: MutableList<User12> = mutableListOf()
 
     fun printThread() {
         listMessage.forEach() {
@@ -37,7 +37,7 @@ class Forum() {
     }
 
     fun createNewUser() {
-        val user = User(login = getLogin(), password = getPassword())
+        val user = User12(login = getLogin(), password = getPassword())
         listUser.add(user)
         println("Пользователь ID: ${user.id}, login: ${user.login}, добавлен на форум")
     }
@@ -70,7 +70,7 @@ class Forum() {
     }
 }
 
-class User(
+class User12(
     val id: Int = getId(),
     val login: String,
     val password: String,
