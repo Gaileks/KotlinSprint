@@ -2,11 +2,11 @@ package lesson_11
 
 fun main() {
 
-    val userOne = User("Миша", "https://1", "разговаривает")
-    val userTwo = User("Саша", "https://2", "разговаривает")
-    val userThree = User("Оля", "https://4", "разговаривает")
-    val userFour = User("Лена", "https://5", "разговаривает")
-    val userFive = User("Катя", "https://6", "разговаривает")
+    val userOne = UserTwo("Миша", "https://1", "разговаривает")
+    val userTwo = UserTwo("Саша", "https://2", "разговаривает")
+    val userThree = UserTwo("Оля", "https://4", "разговаривает")
+    val userFour = UserTwo("Лена", "https://5", "разговаривает")
+    val userFive = UserTwo("Катя", "https://6", "разговаривает")
     val roomOne = Room(
         "Беседа 1", "https://21",
         mutableListOf(userOne, userTwo, userThree)
@@ -23,7 +23,7 @@ fun main() {
 class Room(
     private val name: String,
     private val cover: String,
-    private var listOfUsers: MutableList<User>
+    private var listOfUsers: MutableList<UserTwo>
 ) {
 
     fun infoListOfUsers() {
@@ -35,7 +35,7 @@ class Room(
     }
 }
 
-class User(
+class UserTwo(
     val name: String,
     private val avatar: String,
     private var status: String,
