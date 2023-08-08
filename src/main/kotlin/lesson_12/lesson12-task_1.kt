@@ -1,7 +1,7 @@
 package lesson_12
 
 fun main() {
-    val weatherOne = Weather()
+    val weatherOne = WeatherOne()
     weatherOne.weatherInfo()
     weatherOne.daytimeTemperature = 20
     weatherOne.nightTemperature = 15
@@ -9,7 +9,7 @@ fun main() {
     weatherOne.wasItRaining = true
     weatherOne.weatherInfo()
 
-    val weatherTwo = Weather()
+    val weatherTwo = WeatherOne()
     weatherTwo.daytimeTemperature = 25
     weatherTwo.nightTemperature = 10
     weatherTwo.atmosphericPressure = 720
@@ -18,7 +18,7 @@ fun main() {
 
 }
 
-class Weather() {
+class WeatherOne() {
 
     var daytimeTemperature: Int = 0
     var nightTemperature: Int = 0
