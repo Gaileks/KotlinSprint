@@ -16,6 +16,5 @@ class Vessel(
     var name = name
         set(value) {
             println("Внимание, имя у корабля менять нельзя!")
-            field = "Тихий"
         }
 }
