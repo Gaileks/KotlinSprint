@@ -21,8 +21,6 @@ class Folder(numberOfFiles: Int, name: String) {
             secret -> 0
             else -> field
         }
-
-
 }
 
 
