@@ -4,7 +4,7 @@ fun main() {
 
 }
 
-class UserCard(
+class UserCard1(
     var name: String,
     var phoneNumber: Long,
     var company: String?

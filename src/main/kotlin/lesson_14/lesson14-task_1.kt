@@ -2,14 +2,14 @@ package lesson_14
 
 fun main() {
 
-    val standardShip = StandardShip("Смелый", 10, 15)
+    val standardShip = StandardShip1("Смелый", 10, 15)
 
     standardShip.getNameInfo()
     standardShip.getLoadCapacityInfo()
     standardShip.getSpeedInfo()
 }
 
-class StandardShip(
+class StandardShip1(
     private val name: String,
     private val speed: Int,
     private val loadCapacity: Int,

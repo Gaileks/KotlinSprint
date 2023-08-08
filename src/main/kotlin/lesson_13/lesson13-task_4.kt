@@ -1,12 +1,12 @@
 package lesson_13
 
 fun main() {
-    val userCards = addUserCard()
+    val userCards = addUserCard1()
 
     userCards.forEach { it.getContactInformation() }
 }
 
-fun addUserCard(): List<UserCardTwo> {
+fun addUserCard1(): List<UserCardTwo> {
     val userCards = mutableListOf<UserCardTwo>()
     var wordToCheck = "да"
     var name: String?
