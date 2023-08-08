@@ -2,12 +2,13 @@ package lesson_15
 
 fun main() {
 
-    val truck = Truck()
-    val passengerCar = PassengerCar()
-    val passengerCarTwo = PassengerCar()
+    val truck = Truck(5,6)
+    val passengerCar = PassengerCar(2)
+    val passengerCarTwo = PassengerCar(10)
 
     truck.vehicleMovement()
     truck.shipping()
+    truck.transportationPeople()
     passengerCar.vehicleMovement()
     passengerCar.transportationPeople()
     passengerCarTwo.vehicleMovement()
@@ -22,27 +23,45 @@ interface VehicleMovement {
 }
 
 interface Shipping {
+    val numberOfCargo: Int
+    val numberOfCargoMax: Int
 
     fun shipping() {
-        println("Перевез 2 тонны груза")
+        when {
+            numberOfCargo > numberOfCargoMax -> {
+                println("Максимально автомобиль может перевезти $numberOfCargoMax тонн груза")
+                println("Автомобиль перевез $numberOfCargoMax тонн груза")
+            }
+            else -> println("Автомобиль перевез $numberOfCargo тонн груза")
+        }
     }
 }
 
 interface TransportationPeople {
+    val numberOfPassengers: Int
+    val numberOfPassengersMax: Int
 
-    fun transportationPeople()
-}
-
-class PassengerCar : VehicleMovement, TransportationPeople {
-
-    override fun transportationPeople() {
-        println("Перевез 3 человека")
+    fun transportationPeople() {
+        when {
+            numberOfPassengers > numberOfPassengersMax -> {
+                println("Максимально автомобиль может перевезти $numberOfPassengersMax человека")
+                println("Автомобиль перевез $numberOfPassengersMax человека")
+            }
+            else -> println("Автомобиль перевез $numberOfPassengers человека")
+        }
     }
 }
 
-class Truck : VehicleMovement, TransportationPeople, Shipping {
+class PassengerCar(
+    override val numberOfPassengers: Int
+) : VehicleMovement, TransportationPeople {
+    override val numberOfPassengersMax: Int = 3
+}
 
-    override fun transportationPeople() {
-        println("Перевез 1 человека")
-    }
+class Truck(
+    override val numberOfPassengers: Int,
+    override val numberOfCargo: Int,
+) : VehicleMovement, TransportationPeople, Shipping {
+    override val numberOfPassengersMax = 1
+    override val numberOfCargoMax = 2
 }
