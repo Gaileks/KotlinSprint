@@ -2,13 +2,11 @@ package lesson_16
 
 fun main() {
 
-    val gamer = Gamer("Max",50)
+    val gamer = Gamer("Max", 50)
 
     gamer.statusGamerInfo()
     gamer.causeDamage(90)
-    gamer.statusGamerInfo()
     gamer.healing(500)
-    gamer.statusGamerInfo()
     gamer.causeDamage(110)
     gamer.statusGamerInfo()
 }
@@ -16,7 +14,6 @@ fun main() {
 class Gamer(
     private val name: String,
     private var impactForce: Int,
-
 ) {
     private var health: Int = 100
     private var isAlive: Boolean = true
@@ -29,18 +26,31 @@ class Gamer(
     }
 
     fun healing(mana: Int) {
+
+        if (!isAlive) {
+            println("Игрок уже мертв, его нельзя лечить!")
+            return
+        }
+        println("К игроку применили лечение на $mana маны")
         when {
-            !isAlive -> death()
             (health + mana) >= 100 -> health = 100
             else -> health += mana
         }
+        println("Текущее здоровье: $health%")
     }
 
     fun causeDamage(mana: Int) {
+        if (!isAlive) {
+            println("Игрок уже мертв, его нельзя повторно убить!")
+            return
+        }
+        println("Игроку нанесли урон $mana")
         when {
-            !isAlive -> death()
             (health - mana) <= 0 -> death()
-            else -> health -= mana
+            else -> {
+                health -= mana
+                println("Текущее здоровье: $health%")
+            }
         }
     }
 
