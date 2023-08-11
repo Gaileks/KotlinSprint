@@ -10,7 +10,7 @@ fun main() {
     string.draw(1, 2f, CircleNew())
 }
 
-open class Screen() {
+open class Screen {
 
     fun draw(x: Int, y: Int, pointNew: PointNew) {
         println("Нарисовали ${pointNew.name}, координаты X:$x, Y:$y ")
@@ -25,14 +25,8 @@ open class Screen() {
     }
 }
 
-class PointNew() : Screen() {
-    val name = "Точка"
-}
+class PointNew(val name: String = "Точка") : Screen()
 
-class SquareNew : Screen() {
-    val name = "Квадрат"
-}
+class SquareNew(val name: String = "Квадрат") : Screen()
 
-class CircleNew : Screen() {
-    val name = "Круг"
-}
+class CircleNew(val name: String = "Круг") : Screen()
