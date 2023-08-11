@@ -12,33 +12,46 @@ fun main() {
 }
 
 interface Playing {
-    val name: String
 
     fun startPlaying() {
-        println("$name Играет")
+        println("Играет")
     }
 }
 
 interface Sleeping {
-    val name: String
 
     fun startSleeping() {
-        println("$name Спит")
+        println("Спит")
     }
 }
 
 interface Eating {
-    val name: String
 
     fun startEating() {
-        println("$name Ест")
+        println("Ест")
     }
 }
 
-abstract class Tamagotchi : Playing, Sleeping, Eating
+open class Tamagotchi(val name: String) : Playing, Sleeping, Eating {
 
-class Fox(override val name: String) : Tamagotchi()
+    override fun startEating() {
+        print("$name ")
+        super.startEating()
+    }
 
-class Dog(override val name: String) : Tamagotchi()
+    override fun startSleeping() {
+        print("$name ")
+        super.startSleeping()
+    }
 
-class Cat(override val name: String) : Tamagotchi()
+    override fun startPlaying() {
+        print("$name ")
+        super.startPlaying()
+    }
+}
+
+class Fox(name: String) : Tamagotchi(name)
+
+class Dog(name: String) : Tamagotchi(name)
+
+class Cat(name: String) : Tamagotchi(name)
