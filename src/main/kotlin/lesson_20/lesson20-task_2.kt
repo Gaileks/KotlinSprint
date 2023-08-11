@@ -17,6 +17,6 @@ class YoungPlayer(
         } else {
             health += mana
         }
-       println("К игроку $name было применено лечение на $mana, теперь его здоровее составляет $health")
+       println("К игроку $name было применено лечение на $mana, теперь его здоровье составляет $health")
     }
 }
