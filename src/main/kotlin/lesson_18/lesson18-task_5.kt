@@ -6,11 +6,11 @@ fun main() {
     val string = Screen()
 
     string.draw(PointNew(x = 1, y = 1))
-    string.draw(SquareNew(x = 1f, y = 1f))
-    string.draw(CircleNew(x = 1, y = 1f))
+    string.draw(SquareNew(x = 2f, y = 2f))
+    string.draw(CircleNew(x = 3, y = 3f))
 }
 
-open class Screen {
+class Screen {
 
     fun draw(figure: Figure) {
         println("Нарисовали ${figure.name}, координаты X:${figure.x}, Y:${figure.y} ")
