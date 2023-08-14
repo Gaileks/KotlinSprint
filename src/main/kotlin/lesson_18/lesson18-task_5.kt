@@ -5,28 +5,28 @@ fun main() {
 
     val string = Screen()
 
-    string.draw(1, 2, PointNew())
-    string.draw(1f, 2f, SquareNew())
-    string.draw(1, 2f, CircleNew())
+    string.draw(PointNew(x = 1, y = 1))
+    string.draw(SquareNew(x = 1f, y = 1f))
+    string.draw(CircleNew(x = 1, y = 1f))
 }
 
 open class Screen {
 
-    fun draw(x: Int, y: Int, pointNew: PointNew) {
-        println("Нарисовали ${pointNew.name}, координаты X:$x, Y:$y ")
-    }
-
-    fun draw(x: Float, y: Float, squareNew: SquareNew) {
-        println("Нарисовали ${squareNew.name}, координаты X:$x, Y:$y ")
-    }
-
-    fun draw(x: Int, y: Float, circleNew: CircleNew) {
-        println("Нарисовали ${circleNew.name}, координаты X:$x, Y:$y ")
+    fun draw(figure: Figure) {
+        println("Нарисовали ${figure.name}, координаты X:${figure.x}, Y:${figure.y} ")
     }
 }
 
-class PointNew(val name: String = "Точка") : Screen()
+abstract class Figure(
+    open val name: String,
+    open val x: Any,
+    open val y: Any,
+)
 
-class SquareNew(val name: String = "Квадрат") : Screen()
 
-class CircleNew(val name: String = "Круг") : Screen()
+class PointNew(override val name: String = "Точка", override val x: Int, override val y: Int) : Figure(name, x, y)
+
+class SquareNew(override val name: String = "Квадрат", override val x: Float, override val y: Float) :
+    Figure(name, x, y)
+
+class CircleNew(override val name: String = "Круг", override val x: Int, override val y: Float) : Figure(name, x, y)
