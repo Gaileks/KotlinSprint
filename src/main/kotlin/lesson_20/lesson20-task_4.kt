@@ -8,6 +8,8 @@ fun main() {
         "9", "10", "11", "12"
     ).map { { println("Нажат элемент $it") } }
 
-    list.filterIndexed { index, _ -> (index + 1) % 4 == 0 }.map { it() }
+    for (i in 3..list.size step 4) {
+        list[i]()
+    }
 }
 
