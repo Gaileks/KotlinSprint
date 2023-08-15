@@ -26,8 +26,9 @@ class Tank(
     }
 
     fun makeShot() {
+
         if (weapon != null) {
-            println("Танк произвел выстрел снарядом ${weapon!!.name} сила урона ${weapon!!.impactForce} ")
+            println("Танк произвел выстрел снарядом ${weapon?.name ?: "Выстрел холостым"} сила урона ${weapon?.impactForce ?: 0} ")
         } else {
             println("У танка патронов нет")
         }
