@@ -14,6 +14,7 @@ class Human(val name: String, val gender: Gender)
 enum class Gender(val title: String) {
     MAN("Мужской"),
     WOMAN("Женский"),
+    UNDEFINED("Не определено"),
 }
 
 class CardFile {
@@ -40,16 +41,19 @@ class CardFile {
 
         do {
             gender = readln().lowercase()
-            if (gender != "ж" && gender != "м") {
+            if (validateInput(gender)) {
                 println("допустимые значения только : Ж  или  М ")
             }
-        } while (gender != "ж" && gender != "м")
+        } while (validateInput(gender))
 
         return when (gender) {
             "ж" -> Gender.WOMAN
-            else -> Gender.MAN
+            "м" -> Gender.MAN
+            else -> Gender.UNDEFINED
         }
     }
+
+    private fun validateInput(gender: String): Boolean = gender != "ж" && gender != "м"
 
     private fun readManual() {
         println(
