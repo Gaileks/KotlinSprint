@@ -1,20 +1,24 @@
 package lesson_20
 
 fun main() {
+    val robot = Robot()
 
-    fun setModifier(ddd: () -> String) {
-
-        val robotPhrase = ddd()
-        println("Робот сказал $robotPhrase \nПереводим")
-        println(robotPhrase.reversed())
-    }
-
-    val say = {
-        mutableListOf("Привет", "Пока", "Мозги", "Еда", "Вкусняшка")
-            .shuffled()[0]
-            .reversed()
-    }
-
-    setModifier(say)
+    robot.say()
 }
 
+class Robot(
+    private val listOfPhrases: String = mutableListOf("Привет", "Пока", "Мозги", "Еда", "Вкусняшка").random(),
+    private var modifier: (String) -> String = { it },
+) {
+    var setModifier: (String) -> String = {
+        (it.reversed())
+    }
+
+    fun say() {
+        println("Робот сказал")
+        val robotPhrase = modifier(setModifier(listOfPhrases))
+        println(robotPhrase)
+        println("Перевод")
+        println(setModifier(robotPhrase))
+    }
+}
