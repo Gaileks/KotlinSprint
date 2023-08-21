@@ -3,22 +3,29 @@ package lesson_20
 fun main() {
     val robot = Robot()
 
+    robot.setModifier { a: String ->
+        a.reversed()
+    }
+
     robot.say()
 }
 
 class Robot(
-    private val listOfPhrases: String = mutableListOf("Привет", "Пока", "Мозги", "Еда", "Вкусняшка").random(),
-    private var modifier: (String) -> String = { it },
+    private val listOfPhrases: String = getWordRobot(),
+    private  var modifier: (String) -> String = { it },
 ) {
-    var setModifier: (String) -> String = {
-        (it.reversed())
+    fun setModifier(modifier: (String) -> String) {
+        this.modifier = modifier
     }
 
-    fun say() {
+    fun say()
+    {
         println("Робот сказал")
-        val robotPhrase = modifier(setModifier(listOfPhrases))
+        val robotPhrase = modifier(listOfPhrases)
         println(robotPhrase)
         println("Перевод")
-        println(setModifier(robotPhrase))
+        println(modifier(robotPhrase))
     }
 }
+
+private fun getWordRobot() = mutableListOf("Привет", "Пока", "Мозги", "Еда", "Вкусняшка").random()
