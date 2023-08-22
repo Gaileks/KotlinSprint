@@ -3,8 +3,8 @@ package lesson_20
 fun main() {
     val robot = Robot()
 
-    robot.setModifier { a: String ->
-        a.reversed()
+    robot.setModifier { modifier: String ->
+        modifier.reversed()
     }
 
     robot.say()
